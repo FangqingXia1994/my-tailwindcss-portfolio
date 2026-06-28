@@ -1,9 +1,58 @@
+import { useState, useEffect } from 'react';
 import useThemeSwitcher from '../../hooks/useThemeSwitcher';
 import { FiSearch } from 'react-icons/fi';
 import developerLight from '../../images/developer.svg';
 import developerDark from '../../images/developer-dark.svg';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+
+const TYPING_TEXT = 'Developer and AI Enthusiast';
+const TYPING_SPEED = 80;   // ms per character
+const CURSOR_BLINK = 530;  // ms per blink cycle
+
+const TypingText = () => {
+	const [displayed, setDisplayed] = useState('');
+	const [charIndex, setCharIndex] = useState(0);
+	const [cursorVisible, setCursorVisible] = useState(true);
+
+	// Type one character at a time
+	useEffect(() => {
+		if (charIndex < TYPING_TEXT.length) {
+			const timeout = setTimeout(() => {
+				setDisplayed((prev) => prev + TYPING_TEXT[charIndex]);
+				setCharIndex((prev) => prev + 1);
+			}, TYPING_SPEED);
+			return () => clearTimeout(timeout);
+		}
+	}, [charIndex]);
+
+	// Blink cursor
+	useEffect(() => {
+		const interval = setInterval(() => {
+			setCursorVisible((v) => !v);
+		}, CURSOR_BLINK);
+		return () => clearInterval(interval);
+	}, []);
+
+	return (
+		<span>
+			{displayed}
+			<span
+				aria-hidden="true"
+				style={{
+					display: 'inline-block',
+					width: '2px',
+					height: '1em',
+					backgroundColor: 'currentColor',
+					marginLeft: '2px',
+					verticalAlign: 'text-bottom',
+					opacity: cursorVisible ? 1 : 0,
+					transition: 'opacity 0.1s',
+				}}
+			/>
+		</span>
+	);
+};
 
 const AppBanner = () => {
 	const [activeTheme] = useThemeSwitcher();
@@ -24,9 +73,21 @@ const AppBanner = () => {
 						duration: 0.9,
 						delay: 0.1,
 					}}
-					className="font-general-semibold text-2xl lg:text-3xl xl:text-4xl text-center sm:text-left text-ternary-dark dark:text-primary-light uppercase"
+					className="font-general-semibold text-2xl lg:text-3xl xl:text-4xl text-center sm:text-left text-ternary-dark dark:text-primary-light"
 				>
-					Hi, I am <br/>Fangqing Xia
+					Hi, I am{' '}
+					<br />
+					<span
+						style={{
+							background:
+								'linear-gradient(135deg, #6366f1 0%, #8b5cf6 40%, #ec4899 100%)',
+							WebkitBackgroundClip: 'text',
+							WebkitTextFillColor: 'transparent',
+							backgroundClip: 'text',
+						}}
+					>
+						Fangqing Xia
+					</span>
 				</motion.h1>
 				<motion.p
 					initial={{ opacity: 0 }}
@@ -38,7 +99,7 @@ const AppBanner = () => {
 					}}
 					className="font-general-medium mt-4 text-lg md:text-xl lg:text-2xl xl:text-3xl text-center sm:text-left leading-normal text-gray-500 dark:text-gray-200"
 				>
-					A Developer and AI Enthusiast
+					<TypingText />
 				</motion.p>
 				<motion.div
 					initial={{ opacity: 0 }}
