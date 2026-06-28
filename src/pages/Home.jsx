@@ -1,11 +1,8 @@
 import { Link } from 'react-router-dom';
 import AppBanner from '../components/shared/AppBanner';
-import ProjectsGrid from '../components/projects/ProjectsGrid';
-import { ProjectsProvider } from '../context/ProjectsContext';
 import AboutMeSkills from '../components/about/AboutMeSkills';
 import { AboutMeProvider } from '../context/AboutMeContext';
-import Button from '../components/reusable/Button';
-import projectImage from '../images/project.svg';
+import projectImage from '../images/project.png';
 import { FiLink2 } from 'react-icons/fi';
 
 const Home = () => {
@@ -37,8 +34,8 @@ const Home = () => {
 					</Link>
 				</div>
 
-				<div className="sm:w-1/3 mb-7 sm:mb-0">
-					<img src={projectImage} className="rounded-lg w-106" alt="" />
+				<div className="w-1/3 mb-7 sm:mb-0">
+					<img src={projectImage} className="rounded-lg w-full h-auto" alt="" />
 				</div>
 			</div>
 

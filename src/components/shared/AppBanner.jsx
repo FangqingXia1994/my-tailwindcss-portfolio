@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
 import useThemeSwitcher from '../../hooks/useThemeSwitcher';
 import { FiSearch } from 'react-icons/fi';
-import developerLight from '../../images/developer.svg';
-import developerDark from '../../images/developer-dark.svg';
+import developerLight from '../../images/developer.png';
+import developerDark from '../../images/developer.png';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 
