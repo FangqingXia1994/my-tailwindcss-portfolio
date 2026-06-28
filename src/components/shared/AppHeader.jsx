@@ -1,4 +1,4 @@
-import { useState} from 'react';
+import { useState } from 'react';
 import { FiMenu, FiMoon, FiSun, FiX } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
 import useThemeSwitcher from '../../hooks/useThemeSwitcher';
@@ -32,9 +32,9 @@ const AppHeader = ({ onThemeChange }) => {
 	}
 
 	const handleThemeChange = () => {
-        setTheme(activeTheme);
+		setTheme(activeTheme);
 		onThemeChange(activeTheme === 'dark' ? 'light' : 'dark');
-    };
+	};
 
 	return (
 		<motion.nav
@@ -86,10 +86,10 @@ const AppHeader = ({ onThemeChange }) => {
 							aria-label="Hamburger Menu"
 						>
 							{showMenu ? (
-									<FiX className="text-3xl" />
-								) : (
-									<FiMenu className="text-3xl" />
-								)}
+								<FiX className="text-3xl" />
+							) : (
+								<FiMenu className="text-3xl" />
+							)}
 						</button>
 					</div>
 
@@ -126,7 +126,7 @@ const AppHeader = ({ onThemeChange }) => {
 					</Link>
 				</div>
 
-				
+
 				{/* Header links large screen */}
 				<div className="dark:border-white font-general-medium hidden m-0 sm:ml-4 mt-5 sm:mt-3 sm:flex p-5 sm:p-0 justify-center items-center shadow-lg sm:shadow-none ">
 					<Link
@@ -164,7 +164,7 @@ const AppHeader = ({ onThemeChange }) => {
 					{/* <div className="hidden md:flex">
 						<span
 							onClick={showHireMeModal}
-							className="text-md font-general-medium bg-indigo-500 hover:bg-indigo-600 text-white shadow-sm rounded-md px-5 py-2.5 duration-300"
+							className="text-md font-general-medium bg-indigo-500 text-white shadow-sm rounded-md px-5 py-2.5"
 							aria-label="Hire Me Button"
 						>
 							<Button title="Hire Me" />
