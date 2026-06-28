@@ -1,9 +1,9 @@
 import {
-	FiGithub,
 	FiInstagram,
 	FiLinkedin,
 	FiHome,
 	FiYoutube,
+	FiBook,
 } from 'react-icons/fi';
 import { FaSteam } from 'react-icons/fa';
 import AppFooterCopyright from './AppFooterCopyright';
@@ -39,6 +39,11 @@ const socialLinks = [
 		id: 6,
 		icon: <FaSteam />,
 		url: 'https://steamcommunity.com/profiles/76561198308770769',
+	},
+	{
+		id: 7,
+		icon: <FiBook />,
+		url: 'https://scholar.google.com/citations?user=TSpQK6kAAAAJ&hl=en&oi=ao',
 	},
 ];
 
