@@ -28,7 +28,7 @@ const socialLinks = [
 	{
 		id: 4,
 		icon: <FiLinkedin />,
-		url: 'https://www.linkedin.com/in/fangqingxia/',
+		url: 'https://www.linkedin.com/in/frankiexia/',
 	},
 	{
 		id: 5,

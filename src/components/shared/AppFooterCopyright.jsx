@@ -10,13 +10,12 @@ function AppFooterCopyright() {
 				>
 					TailwindCSS Portfolio
 				</a>
-				.
 				<a
 					href="https://fangqingxia.com"
 					target="_blank"
-					className="text-secondary-dark dark:text-secondary-light font-medium uppercase hover:underline hover:text-indigo-600 dark:hover:text-indigo-300 ml-1 duration-500"
+					className="text-secondary-dark dark:text-secondary-light font-medium hover:underline hover:text-indigo-600 dark:hover:text-indigo-300 ml-1 duration-500"
 				>
-					Fangqing Xia
+					by Fangqing Xia
 				</a>
 			</div>
 		</div>
